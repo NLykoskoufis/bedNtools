@@ -1,0 +1,20 @@
+#[2021-04-29 03:04:59 PM]
+cd src
+#[2021-04-29 03:05:30 PM]
+rm -rf mode_bamstat mode_cis mode_extract mode_fdensity mode_fenrich mode_genrich mode_gwas mode_match mode_pca mode_quan mode_rep mode_rtc mode_trans mode_union
+#[2021-04-29 03:05:36 PM]
+make baobab -j4
+#[2021-04-29 03:05:40 PM]
+make clean 
+#[2021-04-29 03:05:42 PM]
+make 
+#[2021-04-29 03:05:50 PM]
+lh
+#[2021-04-30 09:13:20 AM]
+cd src
+#[2021-04-30 09:13:20 AM]
+lh
+#[2021-05-03 04:21:22 PM]
+cd src
+#[2021-05-03 04:21:22 PM]
+lh
