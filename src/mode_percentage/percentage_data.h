@@ -1,7 +1,7 @@
 #ifndef _MODE_PERCENTAGE_H
 #define _MODE_PERCENTAGE_H
 
-#include "../common_data.h"
+#include "../common/data.h"
 
 // ANALYSIS MODES 
 #define PERC_NONE   0
