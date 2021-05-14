@@ -51,7 +51,7 @@ CXXFLAG_WRN=-Wall -Wextra -Wno-sign-compare -Wno-unused-local-typedefs -Wno-depr
 LIB_FLAGS=-lz -lgsl -lbz2 -llzma -lgslcblas -lm -lpthread -lcurl
 
 #FILE LISTS
-BFILE=bin/bedcorrect
+BFILE=bin/bedntools
 SFILE=$(shell find scripts -name *.R)
 MFILE=$(shell find doc -name *.1)
 HFILE=$(shell find src -name *.h)
