@@ -35,6 +35,7 @@
 
 //INCLUDE BOOST USEFULL STUFFS (BOOST)
 #include <boost/program_options.hpp>
+#include <boost/algorithm/string.hpp>
 
 //INCLUDE HTS LIBRARY
 #include <htslib/hts.h>
