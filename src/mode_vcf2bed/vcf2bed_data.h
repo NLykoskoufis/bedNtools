@@ -1,7 +1,7 @@
 #ifndef _VCF2BED_H
 #define _VCF2BED_H
 
-#include "../common_data.h"
+#include "../common/data.h"
 
 class Vcf2bed {
 public:
