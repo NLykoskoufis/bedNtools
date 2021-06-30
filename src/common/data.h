@@ -16,12 +16,11 @@
 #ifndef _DATA_H
 #define _DATA_H
 
+
+
 #include "otools.h"
 #include "filter.h"
 
-#ifndef QTLTOOLS_VERSION
-#define QTLTOOLS_VERSION "1.3.1"
-#endif
 
 class data {
 public:

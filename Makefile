@@ -150,12 +150,12 @@ static-dbg: LIB_FLAGS=-Wl,-Bstatic -lz -lgsl -lbz2 -llzma -lgslcblas -lcurl -Wl,
 endif
 static-dbg: $(BFILE)
 
-personal: BOOST_INC=/usr/include/
-personal: BOOST_LIB=/usr/lib/x86_64-linux-gnu/
-personal: RMATH_INC=$(HOME)/Tools/R-3.6.1/src/include
-personal: RMATH_LIB=$(HOME)/Tools/R-3.6.1/src/nmath/standalone
-personal: HTSLD_INC=$(HOME)/Tools/htslib-1.9
-personal: HTSLD_LIB=$(HOME)/Tools/htslib-1.9
+personal: BOOST_INC=/Users/nikolaoslykoskoufis/Documents/Programming/Tools/boost_1_74_0/
+personal: BOOST_LIB=/Users/nikolaoslykoskoufis/Documents/Programming/Tools/boost_1_74_0/stage/lib
+personal: RMATH_INC=/Users/nikolaoslykoskoufis/Documents/Programming/Tools/R-3.6.1/src/include
+personal: RMATH_LIB=/Users/nikolaoslykoskoufis/Documents/Programming/Tools/R-3.6.1/src/nmath/standalone
+personal: HTSLD_INC=/Users/nikolaoslykoskoufis/Documents/Programming/Tools/htslib-1.11
+personal: HTSLD_LIB=/Users/nikolaoslykoskoufis/Documents/Programming/Tools/htslib-1.11
 personal: static
 
 personal-dbg: BOOST_INC=/usr/include/
@@ -166,6 +166,13 @@ personal-dbg: HTSLD_INC=$(HOME)/Tools/htslib-1.9
 personal-dbg: HTSLD_LIB=$(HOME)/Tools/htslib-1.9
 personal-dbg: debug
 
+yggdrasil: BOOST_INC=/home/users/l/lykoskou/Tools/boost_1_71_0/
+yggdrasil: BOOST_LIB=/home/users/l/lykoskou/Tools/boost_1_71_0/stage/lib/
+yggdrasil: RMATH_INC=/home/users/l/lykoskou/Tools/R-3.6.1/src/include/
+yggdrasil: RMATH_LIB=/home/users/l/lykoskou/Tools/R-3.6.1/src/nmath/standalone/
+yggdrasil: HTSLD_INC=/home/users/l/lykoskou/Tools/htslib-1.9/
+yggdrasil: HTSLD_LIB=/home/users/l/lykoskou/Tools/htslib-1.9/
+yggdrasil: static
 baobab: BOOST_INC=/srv/beegfs/scratch/groups/funpopgen/Tools/boost_1_71_0/
 baobab: BOOST_LIB=/srv/beegfs/scratch/groups/funpopgen/Tools/boost_1_71_0/stage/lib/
 baobab: RMATH_INC=/srv/beegfs/scratch/groups/funpopgen/Tools/R-3.6.1/src/include/
@@ -219,7 +226,7 @@ obj/BedCorrect.o: src/BedCorrect.cpp $(HFILE) $(TFILE) $(CFILE)
 obj/data.o: src/common/data.cpp src/common/data.h src/common/filter.h $(TFILE)
 	$(CXX) -o $@ -c $< $(CXXFLAG) $(IFLAG)
 
-obj/correct_%.o: correct_%.cpp correct_data.h src/common/data.h src/common/filter.h $(TFILE)
+obj/correct_%.o: correct_%.cpp correct_data.h $(TFILE)
 	$(CXX) -o $@ -c $< $(CXXFLAG) $(IFLAG)
 	
 obj/percentage_%.o: percentage_%.cpp percentage_data.h $(TFILE)
@@ -231,6 +238,8 @@ obj/exclude_%.o: exclude_%.cpp exclude_data.h  $(TFILE)
 obj/vcf2bed_%.o: vcf2bed_%.cpp vcf2bed_data.h $(TFILE)
 	$(CXX) -o $@ -c $< ${CXXFLAG} $(IFLAG)
 
+obj/merge_%.o: merge_%.cpp merge_data.h $(TFILE)
+	$(CXX) -o $@ -c $< ${CXXFLAG} $(IFLAG)
 
 clean: 
 	rm -f obj/*.o $(BFILE)

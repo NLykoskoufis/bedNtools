@@ -18,7 +18,8 @@
 #include "mode_percentage/percentage_data.h"
 #include "mode_exclude/exclude_data.h"
 #include "mode_vcf2bed/vcf2bed_data.h"
-#include "common/data.h"
+#include "mode_merge/merge_data.h"
+
 
 void printModes(){
     vrb.ctitle("Usage:");
@@ -29,6 +30,7 @@ void printModes(){
 	cout << "\x1B[37;1m" <<   " filter" << "\033[0m" << " Filter phenotype by percentage of missing expression accross samples" << endl;
     cout << "\x1B[37;1m" << " exclude" << "\033[0m" << " Exclude samples from bed file" << endl;
     cout << "\x1B[37;1m" << " vcf2bed" << "\033[0m" << " Convert vcf file to UCSC bed file" << endl;
+    cout << "\x1B[37;1m" << " merge" << "\033[0m" << " Merge multiple single sample bed files into multisample bed files" << endl;
 }
 
 int main(int argc, char ** argv) {
@@ -67,6 +69,8 @@ int main(int argc, char ** argv) {
 
     else if (strcmp(argv[1], "correct") ==0) correct_main(args);
     
+    else if (strcmp(argv[1], "merge") ==0) merge_main(args);
+
     else if (strcmp(argv[1], "--help") == 0){
         printModes();
         exit(0);

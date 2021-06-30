@@ -15,6 +15,7 @@
 #define _DECLARE_TOOLBOX_HERE
 #include "correct_data.h"
 
+
 void correct_main(vector < string > & argv) {
 	correct_data D;
 
