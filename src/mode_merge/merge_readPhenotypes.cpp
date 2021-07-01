@@ -43,7 +43,7 @@ void Merge::readPhenotypes(string fbed){
                 if (tokens[3] != id[phenotype_count-1]) vrb.error("Files do not contain same genes or are not sorted identically");
             } 
             std::vector < float > values = std::vector < float > (sample_count, 0.0);
-            for (v = 0; v < sample_count.size(); v++) values[v] = tokens[6+v];
+            for (v = 0; v < sample_count; v++) values[v] = tokens[6+v];
             val.push_back(values);
         }
     }
