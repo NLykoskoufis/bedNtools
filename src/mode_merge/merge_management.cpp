@@ -30,7 +30,7 @@ void Merge::checkBED(std::string fbed){
             }else{
                 if (tokens[3] != id[phenotype_count-1]) vrb.error("Files do not contain same genes or are not sorted identically");
             } 
-            val.push_back(stof(tokens[6]));
+            
         }
     }
     if (val.size() != id.size()) vrb.error("Files contain different number of genes");
