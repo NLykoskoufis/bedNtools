@@ -16,7 +16,6 @@ void Merge::writeBed(std::string fout) {
         fdo << id[g] << "\t";
         fdo << info[g] << "\t";
         fdo << strd[g];
-        //for (int s = 0; s < expression.size(); s++) fdo << "\t" << expression[s][i];
         for (int f= 0; f < expression.size(); f++){
             for (int s=0; s < expression[f][g].size(); s++){
                 fdo << "\t" << expression[f][g][s];

@@ -9,7 +9,7 @@ public:
     
     // Phenotypes
     std::vector < std::string > samples;
-    std::vector < std::vector < std::vector < float > > > expression; // Level 1: file; Level 2: gene; Level 3: sample(s) expression value
+    std::vector < std::vector < std::vector < float > > > expression; // Level 1: file; Level 2: gene; Level 3: sample(s) expression value.
     std::vector < std::string > chrom; 
     std::vector < std::string > start; 
     std::vector < std::string > stop;
