@@ -59,6 +59,11 @@ public:
 		if (verbose_on_screen) cout << s << endl;
 		if (verbose_on_log) log << s << endl;
 	}
+	
+	void cprint(string s) {
+		if (verbose_on_screen) cout << "\x1B[34m" << s <<  "\033[0m" << endl;
+		if (verbose_on_log) log << "\x1B[34m" << s <<  "\033[0m" << endl;
+	}
 
 	void ctitle(string s) {
 		if (verbose_on_screen) cout << endl << "\x1B[32m" << s <<  "\033[0m" << endl;

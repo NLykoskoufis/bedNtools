@@ -53,7 +53,7 @@ void merge_main(std::vector < std::string > & argv) {
         else P.first_file = false;
         P.readPhenotypes(bed_list[b]);
     }
-    vrb.bullet("Writing file");
+    vrb.cprint("Writing file");
     P.writeBed(outFile);
     
 
