@@ -9,7 +9,7 @@ public:
     
     // Phenotypes
     std::vector < std::string > samples;
-    std::vector < std::vector < float > > expression;
+    std::vector < std::vector < std::vector < float > > > expression;
     std::vector < std::string > chrom; 
     std::vector < std::string > start; 
     std::vector < std::string > stop;
@@ -27,7 +27,7 @@ public:
     // Initial check 
     void checkBED(std::string);
     std::vector < std::string > geneCheck; 
-    
+
 
     // OPTIONS 
     boost::program_options::options_description option_descriptions;

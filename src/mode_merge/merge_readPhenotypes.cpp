@@ -2,7 +2,7 @@
 
 void Merge::readPhenotypes(string fbed){
 
-    std::vector < float > val;
+    std::vector < std::vector < float > > val;
 
     //Open BED file
 	vrb.bullet("Reading phenotype data in [" + fbed + "]");
@@ -15,7 +15,12 @@ void Merge::readPhenotypes(string fbed){
 
     std::vector < std::string > tokens;
     boost::split(tokens, std::string(str.s), boost::is_any_of("\t"));
-    samples.push_back(tokens[6]);
+    int sample_count = 0;
+    for (int t = 6; t < tokens.size(); t++) 
+    {
+        samples.push_back(tokens[t]); // If many samples then add them
+        sample_count++;
+    }
 
     //Read phenotypes
     unsigned int linecount =0;
@@ -37,7 +42,9 @@ void Merge::readPhenotypes(string fbed){
             }else{
                 if (tokens[3] != id[phenotype_count-1]) vrb.error("Files do not contain same genes or are not sorted identically");
             } 
-            val.push_back(stof(tokens[6]));
+            std::vector < float > values = std::vector < float > (sample_count, 0.0);
+            for (v = 0; v < sample_count.size(); v++) values[v] = tokens[6+v];
+            val.push_back(values);
         }
     }
     if (val.size() != id.size()) vrb.error("Files contain different number of genes");
