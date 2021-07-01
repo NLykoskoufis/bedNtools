@@ -10,7 +10,7 @@ void merge_main(std::vector < std::string > & argv) {
     
     boost::program_options::options_description opt_files ("\x1B[32mI/O\33[0m");
 	opt_files.add_options()
-		("bed", boost::program_options::value< vector < string > >()->multitoken(), "List of phenotype files in BED format. \033[1;31mBed files need to contain the same genes in same order!\033[0m")
+		("bed", boost::program_options::value< vector < string > >()->multitoken(), "List of phenotype files in BED format. \033[1;31mBED files need to contain the same genes in same order!\033[0m")
 		("out", boost::program_options::value< std::string >(), "Output file.");
 
     P.option_descriptions.add(opt_basic).add(opt_files);
