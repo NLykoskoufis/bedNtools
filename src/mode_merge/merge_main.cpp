@@ -52,9 +52,8 @@ void merge_main(std::vector < std::string > & argv) {
         if ( b == 0) P.first_file = true;
         else P.first_file = false;
         P.readPhenotypes(bed_list[b]);
-
     }
-
+    vrb.bullet("Writing file")
     P.writeBed(outFile);
     
   
