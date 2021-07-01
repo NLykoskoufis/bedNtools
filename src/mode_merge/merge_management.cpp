@@ -2,5 +2,5 @@
 
 
 void Merge::checkBED(std::string fbed){
-    vrb.print("TCB")
+    vrb.print("TCB");
 }
