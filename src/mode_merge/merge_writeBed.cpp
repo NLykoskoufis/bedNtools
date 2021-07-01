@@ -19,5 +19,4 @@ void Merge::writeBed(std::string fout) {
         for (int s = 0; s < expression.size(); s++) fdo << "\t" << expression[s][i];
         fdo << std::endl;
     }
-
 }

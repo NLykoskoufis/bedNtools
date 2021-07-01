@@ -24,6 +24,10 @@ public:
     void readPhenotypes(std::string);
     void writeBed(std::string);
 
+    // Initial check 
+    void checkBED(std::string);
+    std::vector < std::string > geneCheck; 
+    
 
     // OPTIONS 
     boost::program_options::options_description option_descriptions;
