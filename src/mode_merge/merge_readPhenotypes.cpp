@@ -5,7 +5,7 @@ void Merge::readPhenotypes(string fbed){
     std::vector < std::vector < float > > val;
 
     //Open BED file
-	vrb.bullet("Reading phenotype data in [" + fbed + "]");
+	vrb.cprint("Reading phenotype data in [" + fbed + "]");
 	htsFile *fp = hts_open(fbed.c_str(),"r");
 	if (!fp) std::cout << "Cannot open file" << std::endl;
 	tbx_t *tbx = tbx_index_load(fbed.c_str());

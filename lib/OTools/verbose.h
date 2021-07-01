@@ -66,8 +66,8 @@ public:
 	}
 
 	void ctitle(string s) {
-		if (verbose_on_screen) cout << endl << "\x1B[32m" << s <<  "\033[0m" << endl;
-		if (verbose_on_log) log << endl << s << endl;
+		if (verbose_on_screen) cout << endl << "\x1B[32m" << "  * " << s <<  "\033[0m" << endl;
+		if (verbose_on_log) log << endl << "\x1B[32m" << "  * " << s <<  "\033[0m" << endl;
 	}
 
 	void title(string s) {
