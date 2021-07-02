@@ -26,7 +26,7 @@ void printModes(){
     vrb.print("  Bedntools [mode] [options]");
     vrb.print("  eg: bedntools correct --help");
     vrb.ctitle("Available modes:");
-    vrb.print("  correct   Covariate correction of a BED file");
+    vrb.print("\x1B[37;1m correct\033[0m Covariate correction of a BED file");
 	cout << "\x1B[37;1m" <<   " filter" << "\033[0m" << " Filter phenotype by percentage of missing expression accross samples" << endl;
     cout << "\x1B[37;1m" << " exclude" << "\033[0m" << " Exclude samples from bed file" << endl;
     cout << "\x1B[37;1m" << " vcf2bed" << "\033[0m" << " Convert vcf file to UCSC bed file" << endl;
