@@ -30,6 +30,7 @@ void merge_main(std::vector < std::string > & argv) {
 	// 3. PRINT HELP/HEADER
 	//---------------------
     std::cout << "\n" << "\x1B[32;1m" << "MERGE BED FILES" << "\033[0m" << endl;
+    vrb.title("Merges multiple bed files together. The bed files need to contain the same genes in identical order");
     if(P.options.count("help")) {
         std::cout << P.option_descriptions << std::endl;
         exit(0);
