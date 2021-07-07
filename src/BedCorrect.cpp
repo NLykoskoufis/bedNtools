@@ -29,6 +29,7 @@ void printModes(){
     vrb.print("\x1B[37;1m correct\033[0m Covariate correction of a BED file");
 	cout << "\x1B[37;1m" <<   " filter" << "\033[0m" << " Filter phenotype by percentage of missing expression accross samples" << endl;
     cout << "\x1B[37;1m" << " exclude" << "\033[0m" << " Exclude samples from bed file" << endl;
+    cout << "\x1B[37;1m" << " include" << "\033[0m" << " Include samples from bed file" << endl;
     cout << "\x1B[37;1m" << " vcf2bed" << "\033[0m" << " Convert vcf file to UCSC bed file" << endl;
     cout << "\x1B[37;1m" << " merge" << "\033[0m" << " Merge multiple single sample bed files into multisample bed files" << endl;
 }
@@ -63,7 +64,8 @@ int main(int argc, char ** argv) {
 	else if (strcmp(argv[1], "correct") == 0) correct_main(args);
     // EXCLUDE MODE 
     else if (strcmp(argv[1], "exclude") == 0) exclude_main(args);
-
+    // INCLUDE MODE 
+    else if (strcmp(argv[1], "include") == 0) include_main(args);
     // VCF2BED MODE 
     else if (strcmp(argv[1], "vcf2bed") == 0) vcf2bed_main(args);
 

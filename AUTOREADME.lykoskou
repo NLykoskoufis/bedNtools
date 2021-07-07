@@ -178,3 +178,17 @@ rsync -av ../bedNtools1/ .
 git status
 #[2021-05-05 01:16:39 PM]
 git add*
+#[2021-07-02 01:31:24 PM]
+cd bedNtools
+#[2021-07-02 01:31:25 PM]
+lh
+#[2021-07-02 01:31:27 PM]
+make clean 
+#[2021-07-02 01:33:38 PM]
+make baobab -j10
+#[2021-07-07 12:17:35 PM]
+cd bedNtools
+#[2021-07-07 12:17:35 PM]
+lh
+#[2021-07-07 12:18:13 PM]
+cd ../

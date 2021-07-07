@@ -235,6 +235,9 @@ obj/percentage_%.o: percentage_%.cpp percentage_data.h $(TFILE)
 obj/exclude_%.o: exclude_%.cpp exclude_data.h  $(TFILE)
 	$(CXX) -o $@ -c $< ${CXXFLAG} $(IFLAG)
 
+obj/include_%.o: include_%.cpp include_data.h  $(TFILE)
+	$(CXX) -o $@ -c $< ${CXXFLAG} $(IFLAG)
+
 obj/vcf2bed_%.o: vcf2bed_%.cpp vcf2bed_data.h $(TFILE)
 	$(CXX) -o $@ -c $< ${CXXFLAG} $(IFLAG)
 
