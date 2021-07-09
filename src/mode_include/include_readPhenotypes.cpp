@@ -1,6 +1,6 @@
-#include "exclude_data.h"
+#include "include_data.h"
 
-void exclude_data::readPhenotypes(string fbed, string fout){
+void include_data::readPhenotypes(string fbed, string fout){
     
     output_file fdo (fout);
 
@@ -19,12 +19,12 @@ void exclude_data::readPhenotypes(string fbed, string fout){
     if (tokens.size() < 7) std::cout << "Incorrect number of columns" << std::endl;
     int sample_count = 0;
     // Insert samples into unordered map sampleID->index in header.
-    for(int i=6; i<tokens.size(); i++) mappingS.insert(std::make_pair(tokens[i],i)); 
+    for(int i=0; i<tokens.size(); i++) mappingS.insert(std::make_pair(tokens[i],i)); 
     
-    //Getting indexes of samples to be removed;
+    //Getting indexes of samples to be kept;
     std::vector < int > indexS;
-    for(int i=0;i<samplesToRemove.size(); i++){
-        std::unordered_map<std::string,int>::const_iterator got = mappingS.find(samplesToRemove[i]);
+    for(int i=0;i<samplesToKeep.size(); i++){
+        std::unordered_map<std::string,int>::const_iterator got = mappingS.find(samplesToKeep[i]);
         if(got == mappingS.end()){
             std::cout << "Sample not found. You cannot include samples that are not present in the dataset" << std::endl; 
             exit(-1);
@@ -33,13 +33,16 @@ void exclude_data::readPhenotypes(string fbed, string fout){
         }
     }
 
-    // Writing header filtering out samples 
- 
+    fdo << "#chr\tstart\tend\tid\tinfo\tstrand";
     for(int i=0; i<tokens.size(); i++){
-        if(find(indexS.begin(),indexS.end(), i) == indexS.end())  fdo << tokens[i] << "\t";
-        else continue;
+        if(find(indexS.begin(),indexS.end(), i) != indexS.end())
+        {
+            fdo << "\t" << tokens[i];
+        }else{
+            continue;
+        }
     }
-    fdo << std::endl;
+    fdo << "\n";
 
     //Read phenotypes
     unsigned int linecount =0;
@@ -52,12 +55,18 @@ void exclude_data::readPhenotypes(string fbed, string fout){
         if (str.l && str.s[0] != tbx->conf.meta_char) {
             if (tokens.size() <7) std::cout << "Incorrect number of columns" << std::endl;
             phenotype_count++;
-            std::vector < float > val;
-            for(int i =0; i<tokens.size(); i++){
-                if(find(indexS.begin(), indexS.end(), i) == indexS.end()) fdo << tokens[i] << "\t";;
-                else continue;
+            
+            fdo << tokens[0] << "\t" << tokens[1] << "\t" << tokens[2] << "\t" << tokens[3] << "\t" << tokens[4] << "\t" << tokens[5];
+
+            for(int i =6; i<tokens.size(); i++){
+                if(find(indexS.begin(), indexS.end(), i) != indexS.end())
+                {
+                    fdo << "\t" << tokens[i];
+                }else{
+                    continue;
+                } 
             }
-            fdo << std::endl;
+            fdo << "\n";
         }
     }
     //Finalize & verbose

@@ -1,8 +1,8 @@
-#include "exclude_data.h"
+#include "include_data.h"
 
 
-void exclude_main(std::vector < std::string > & argv) {
-    exclude_data P;
+void include_main(std::vector < std::string > & argv) {
+    include_data P;
     
     boost::program_options::options_description opt_basic ("\x1B[32mBasics\33[0m");
 	opt_basic.add_options()
@@ -52,14 +52,14 @@ void exclude_main(std::vector < std::string > & argv) {
     // RUN ANALYSIS
     //-------------
 
-    if(P.options.count("s")){
-        P.samplesToKeep.push_back(P.options["s"].as<std::string>());
+    if(P.options.count("sample")){
+        P.samplesToKeep.push_back(P.options["sample"].as<std::string>());
         P.readPhenotypes(P.options["bed"].as<std::string>(),outFile);
-    }else if(P.options.count("S")){
-        P.readExclusion(P.options["S"].as<std::string>());
+    }else if(P.options.count("sample-filelist")){
+        P.readInclusion(P.options["sample-filelist"].as<std::string>());
         P.readPhenotypes(P.options["bed"].as<std::string>(),outFile);
     }else{
-        std::cout << "You need to either specify a sample to remove from bed with --s or a file containing sample(s) to be removed" << std::endl;
+        std::cout << "You need to either specify a sample to keep from bed with --s or a file containing sample(s) to be kept" << std::endl;
         exit(-1);
     }
 

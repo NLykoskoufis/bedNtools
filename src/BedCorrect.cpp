@@ -17,6 +17,7 @@
 #include "mode_correct/correct_data.h"
 #include "mode_percentage/percentage_data.h"
 #include "mode_exclude/exclude_data.h"
+#include "mode_include/include_data.h"
 #include "mode_vcf2bed/vcf2bed_data.h"
 #include "mode_merge/merge_data.h"
 

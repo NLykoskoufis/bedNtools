@@ -192,3 +192,85 @@ cd bedNtools
 lh
 #[2021-07-07 12:18:13 PM]
 cd ../
+#[2021-07-07 01:06:27 PM]
+cd ../
+#[2021-07-07 01:06:28 PM]
+lh
+#[2021-07-07 01:07:02 PM]
+make baobab -j 10
+#[2021-07-07 01:08:11 PM]
+make baobab -j 10
+#[2021-07-07 01:09:13 PM]
+make baobab -j 10
+#[2021-07-07 01:11:05 PM]
+make baobab -j 10
+#[2021-07-07 01:13:05 PM]
+make baobab -j 10
+#[2021-07-07 01:15:40 PM]
+make baobab -j 10
+#[2021-07-07 01:18:45 PM]
+make baobab -j 10
+#[2021-07-07 01:18:48 PM]
+make baobab -j 10
+#[2021-07-07 01:21:02 PM]
+make baobab -j 10
+#[2021-07-07 01:22:24 PM]
+re bin
+#[2021-07-07 01:25:26 PM]
+cd Software/bedNtools
+#[2021-07-07 01:27:45 PM]
+make baobab -j 10
+#[2021-07-07 01:35:34 PM]
+cd Software/bedNtools
+#[2021-07-07 01:35:35 PM]
+lh
+#[2021-07-07 01:38:28 PM]
+make baobab -j 10
+#[2021-07-07 01:38:51 PM]
+lh
+#[2021-07-07 01:42:27 PM]
+make baobab -j 10
+#[2021-07-07 01:42:49 PM]
+make baobab -j 10
+#[2021-07-07 01:46:19 PM]
+make baobab -j 10
+#[2021-07-07 01:48:37 PM]
+make baobab -j 10
+#[2021-07-07 01:49:06 PM]
+less -S test_bed.gz
+#[2021-07-07 01:51:20 PM]
+cd bedNtools
+#[2021-07-07 01:51:20 PM]
+lh
+#[2021-07-07 01:51:23 PM]
+git status
+#[2021-07-07 01:51:25 PM]
+git add *
+#[2021-07-07 01:51:26 PM]
+lh
+#[2021-07-07 01:51:28 PM]
+git status
+#[2021-07-07 01:51:51 PM]
+git push origin
+#[2021-07-09 06:38:33 AM]
+cd bedNtools
+#[2021-07-09 06:39:24 AM]
+make baobab -j 10
+#[2021-07-09 06:39:56 AM]
+./bin/bedntools --help
+#[2021-07-09 06:42:17 AM]
+lh
+#[2021-07-09 12:51:10 PM]
+cd bedNtools
+#[2021-07-09 12:52:12 PM]
+make baobab -j 10
+#[2021-07-09 01:09:41 PM]
+make baobab -j 10
+#[2021-07-09 01:09:43 PM]
+lh
+#[2021-07-09 01:10:51 PM]
+make baobab -j 10
+#[2021-07-09 01:20:14 PM]
+make baobab -j 10
+#[2021-07-09 01:22:09 PM]
+make baobab -j 20

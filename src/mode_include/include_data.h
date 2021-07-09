@@ -1,5 +1,5 @@
-#ifndef _EXCLUDE_DATA_H
-#define _EXCLUDE_DATA_H
+#ifndef _INCLUDE_DATA_H
+#define _INCLUDE_DATA_H
 
 #include "../common/data.h"
 
@@ -21,8 +21,8 @@ public:
     void readInclusion(std::string);
 
     //CONSTRUCTOR & DESTRUCTOR
-    exclude_data(){phenotype_count=0;};
-    ~exclude_data(){
+    include_data(){phenotype_count=0;};
+    ~include_data(){
         phenotype_count=0;
     }
 
@@ -34,9 +34,9 @@ public:
 //***************************************************************//
 //******************** DECLARE FUNCTIONS *************************//
 //***************************************************************//
-void exclude_main(std::vector < std::string > & argv);
+void include_main(std::vector < std::string > & argv);
 
 
 
 
-#endif /* _EXCLUDE_DATA_H */
+#endif /* _INCLUDE_DATA_H */
