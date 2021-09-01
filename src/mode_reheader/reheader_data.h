@@ -19,8 +19,8 @@ public:
     void readNewHeader(std::string);
 
     //CONSTRUCTOR & DESTRUCTOR
-    include_data(){singleColumn=true;};
-    ~include_data(){
+    reheader_data(){singleColumn=true;};
+    ~reheader_data(){
         phenotype_count=true;
     }
 
