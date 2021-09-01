@@ -33,6 +33,7 @@ void printModes(){
     cout << "\x1B[37;1m" << " include" << "\033[0m" << " Include samples from bed file" << endl;
     cout << "\x1B[37;1m" << " vcf2bed" << "\033[0m" << " Convert vcf file to UCSC bed file" << endl;
     cout << "\x1B[37;1m" << " merge" << "\033[0m" << " Merge multiple single sample bed files into multisample bed files" << endl;
+    cout << "\x1B[37;1m" << " reheader" << "\033[0m" << " modify the sample names in the bedfile" << endl;
 }
 
 int main(int argc, char ** argv) {
