@@ -1,4 +1,4 @@
-#include "include_data.h"
+#include "reheader_data.h"
 
 void reheader_data::readPhenotypes(string fbed, string fout){
     
