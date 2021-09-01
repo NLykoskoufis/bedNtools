@@ -206,14 +206,10 @@ epfl: RMATH_INC=/home/lykoskou/Tools/R-3.6.1/src/include
 epfl: RMATH_LIB=/home/lykoskou/Tools/R-3.6.1/src/nmath/standalone
 epfl: HTSLD_INC=/home/lykoskou/Software/htslib-1.9/include
 epfl: HTSLD_LIB=/home/lykoskou/Software/htslib-1.9/lib
-epfl: GSL_LIB=/ssoft/spack/humagne/v1/opt/spack/linux-rhel7-x86_S6g1_Mellanox/gcc-7.4.0/gsl-2.5-s4457uk
-5oaqsr52mx5ticuk6oed7cihy/lib
-epfl: GSL_INC=/ssoft/spack/humagne/v1/opt/spack/linux-rhel7-x86_S6g1_Mellanox/gcc-7.4.0/gsl-2.5-s4457uk
-5oaqsr52mx5ticuk6oed7cihy/include
-epfl: ZLIB_INC=/ssoft/spack/humagne/v1/opt/spack/linux-rhel7-x86_S6g1_Mellanox/gcc-7.4.0/zlib-1.2.11-yl
-rp4rhsafljqpno2gpjiyk2szwaq4by/include
-epfl: ZLIB_LIB=/ssoft/spack/humagne/v1/opt/spack/linux-rhel7-x86_S6g1_Mellanox/gcc-7.4.0/zlib-1.2.11-yl
-rp4rhsafljqpno2gpjiyk2szwaq4by/lib
+epfl: GSL_LIB=/ssoft/spack/humagne/v1/opt/spack/linux-rhel7-x86_S6g1_Mellanox/gcc-7.4.0/gsl-2.5-s4457uk5oaqsr52mx5ticuk6oed7cihy/lib
+epfl: GSL_INC=/ssoft/spack/humagne/v1/opt/spack/linux-rhel7-x86_S6g1_Mellanox/gcc-7.4.0/gsl-2.5-s4457uk5oaqsr52mx5ticuk6oed7cihy/include
+epfl: ZLIB_INC=/ssoft/spack/humagne/v1/opt/spack/linux-rhel7-x86_S6g1_Mellanox/gcc-7.4.0/zlib-1.2.11-ylrp4rhsafljqpno2gpjiyk2szwaq4by/include
+epfl: ZLIB_LIB=/ssoft/spack/humagne/v1/opt/spack/linux-rhel7-x86_S6g1_Mellanox/gcc-7.4.0/zlib-1.2.11-ylrp4rhsafljqpno2gpjiyk2szwaq4by/lib
 epfl: BZIP_LIB=/ssoft/spack/humagne/v1/opt/spack/linux-rhel7-x86_S6g1_Mellanox/gcc-7.4.0/bzip2-1.0.6-mdlqofhyr4gjncpwmlofgybh5cmjadr4/lib
 epfl: BZIP_INC=/ssoft/spack/humagne/v1/opt/spack/linux-rhel7-x86_S6g1_Mellanox/gcc-7.4.0/bzip2-1.0.6-mdlqofhyr4gjncpwmlofgybh5cmjadr4/include
 epfl: XZ_LIB=/ssoft/spack/humagne/v1/opt/spack/linux-rhel7-x86_S6g1_Mellanox/gcc-7.4.0/xz-5.2.4-ubniyi5stffuzxiguxwakp77xefd24w3/lib
