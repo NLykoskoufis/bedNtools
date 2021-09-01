@@ -200,6 +200,35 @@ hbb: LDFLAG=$(CXXFLAG_REL) $(CXXFLAG_WRN) -fvisibility=hidden -static-libstdc++ 
 hbb: LIB_FLAGS=-Wl,-Bstatic -lz -lgsl -lbz2 -llzma -lgslcblas -lcurl -lssl -lcrypto -Wl,-Bdynamic -lm -lpthread -ldl -lrt
 hbb: $(BFILE)
 
+epfl: BOOST_INC=/home/lykoskou/Tools/boost_1_71_0
+epfl: BOOST_LIB=/home/lykoskou/Tools/boost_1_71_0/stage/lib
+epfl: RMATH_INC=/home/lykoskou/Tools/R-3.6.1/src/include
+epfl: RMATH_LIB=/home/lykoskou/Tools/R-3.6.1/src/nmath/standalone
+epfl: HTSLD_INC=/home/lykoskou/Software/htslib-1.9/include
+epfl: HTSLD_LIB=/home/lykoskou/Software/htslib-1.9/lib
+epfl: GSL_LIB=/ssoft/spack/humagne/v1/opt/spack/linux-rhel7-x86_S6g1_Mellanox/gcc-7.4.0/gsl-2.5-s4457uk
+5oaqsr52mx5ticuk6oed7cihy/lib
+epfl: GSL_INC=/ssoft/spack/humagne/v1/opt/spack/linux-rhel7-x86_S6g1_Mellanox/gcc-7.4.0/gsl-2.5-s4457uk
+5oaqsr52mx5ticuk6oed7cihy/include
+epfl: ZLIB_INC=/ssoft/spack/humagne/v1/opt/spack/linux-rhel7-x86_S6g1_Mellanox/gcc-7.4.0/zlib-1.2.11-yl
+rp4rhsafljqpno2gpjiyk2szwaq4by/include
+epfl: ZLIB_LIB=/ssoft/spack/humagne/v1/opt/spack/linux-rhel7-x86_S6g1_Mellanox/gcc-7.4.0/zlib-1.2.11-yl
+rp4rhsafljqpno2gpjiyk2szwaq4by/lib
+epfl: BZIP_LIB=/ssoft/spack/humagne/v1/opt/spack/linux-rhel7-x86_S6g1_Mellanox/gcc-7.4.0/bzip2-1.0.6-mdlqofhyr4gjncpwmlofgybh5cmjadr4/lib
+epfl: BZIP_INC=/ssoft/spack/humagne/v1/opt/spack/linux-rhel7-x86_S6g1_Mellanox/gcc-7.4.0/bzip2-1.0.6-mdlqofhyr4gjncpwmlofgybh5cmjadr4/include
+epfl: XZ_LIB=/ssoft/spack/humagne/v1/opt/spack/linux-rhel7-x86_S6g1_Mellanox/gcc-7.4.0/xz-5.2.4-ubniyi5stffuzxiguxwakp77xefd24w3/lib
+epfl: XZ_INC=/ssoft/spack/humagne/v1/opt/spack/linux-rhel7-x86_S6g1_Mellanox/gcc-7.4.0/xz-5.2.4-ubniyi5stffuzxiguxwakp77xefd24w3/include
+epfl: CURL_INC=/home/lykoskou/Tools/curl-7.78.0/lib/include
+epfl: CURL_LIB=/home/lykoskou/Tools/curl-7.78.0/lib
+epfl: SSL_INC=/home/lykoskou/Tools/openssl-1.1.1l/include
+epfl: SSL_LIB=/home/lykoskou/Tools/openssl-1.1.1l/lib
+epfl: CXXFLAG=$(CXXFLAG_REL) $(CXXFLAG_WRN) -fvisibility=hidden
+epfl: LDFLAG=$(CXXFLAG_REL) $(CXXFLAG_WRN) -fvisibility=hidden -static-libstdc++ -L/ssoft/spack/humagne/v1/opt/spack/linux-rhel7-x86_S6g1_Mellanox/gcc-7.4.0/gsl-2.5-s4457uk5oaqsr52mx5ticuk6oed7cihy/lib/ -L/ssoft/spack/humagne/v1/opt/spack/linux-rhel7-x86_S6g1_Mellanox/gcc-7.4.0/bzip2-1.0.6-mdlqofhyr4gjncpwmlofgybh5cmjadr4/lib/ -L/ssoft/spack/humagne/v1/opt/spack/linux-rhel7-x86_S6g1_Mellanox/gcc-7.4.0/zlib-1.2.11-ylrp4rhsafljqpno2gpjiyk2szwaq4by/lib -L/ssoft/spack/humagne/v1/opt/spack/linux-rhel7-x86_S6g1_Mellanox/gcc-7.4.0/xz-5.2.4-ubniyi5stffuzxiguxwakp77xefd24w3/lib/ -L/home/lykoskou/Tools/openssl-1.1.1l -L/home/lykoskou/Tools/curl-7.78.0/lib/
+epfl: LIB_FLAGS=-Wl,-Bstatic -lz -lgsl -lbz2 -llzma -lgslcblas -Wl,-Bdynamic -lm -lpthread
+epfl: $(BFILE)
+
+
+
 install:
 	$(INSTALL_DIR) $(DESTDIR)$(bindir) $(DESTDIR)$(man1dir) $(DESTDIR)$(autocompdir)
 	$(INSTALL_PROGRAM) $(BFILE) $(DESTDIR)$(bindir)
