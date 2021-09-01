@@ -1,6 +1,6 @@
 #include "include_data.h"
 
-void include_data::readPhenotypes(string fbed, string fout){
+void reheader_data::readPhenotypes(string fbed, string fout){
     
     output_file fdo (fout);
 

@@ -17,26 +17,29 @@ void include_data::readPhenotypes(string fbed, string fout){
     std::vector < std::string > tokens;
     boost::split(tokens, std::string(str.s), boost::is_any_of("\t"));
     if (tokens.size() < 7) std::cout << "Incorrect number of columns" << std::endl;
+    int sample_count = 0;
+    // Insert samples into unordered map sampleID->index in header.
+    for(int i=0; i<tokens.size(); i++) mappingS.insert(std::make_pair(tokens[i],i)); 
     
-    if (singleColumn){
-        if (tokens.size()-6 != newHeader.size()){
-            std::cout << "Number of samples do not match!"; 
+    //Getting indexes of samples to be kept;
+    std::vector < int > indexS;
+    for(int i=0;i<samplesToKeep.size(); i++){
+        std::unordered_map<std::string,int>::const_iterator got = mappingS.find(samplesToKeep[i]);
+        if(got == mappingS.end()){
+            std::cout << "Sample not found. You cannot include samples that are not present in the dataset" << std::endl; 
             exit(-1);
-        }
-    }else{
-        if (tokens.size()-6 != newHeaderMap.size()){
-            std::cout << "Number of samples do not match!"; 
-            exit(-1);
+        }else{
+            indexS.push_back(got->second);
         }
     }
-    
 
     fdo << "#chr\tstart\tend\tid\tinfo\tstrand";
     for(int i=0; i<tokens.size(); i++){
-        if (singleColumn){
-            for(int i=0; i< newHeader.size(); i++){
-                fdo << "\t" << newHeader[i];
-            }
+        if(find(indexS.begin(),indexS.end(), i) != indexS.end())
+        {
+            fdo << "\t" << tokens[i];
+        }else{
+            continue;
         }
     }
     fdo << "\n";
