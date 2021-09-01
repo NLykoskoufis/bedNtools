@@ -20,7 +20,7 @@
 #include "mode_include/include_data.h"
 #include "mode_vcf2bed/vcf2bed_data.h"
 #include "mode_merge/merge_data.h"
-
+#include "mode_reheader/reheader_data.h"
 
 void printModes(){
     vrb.ctitle("Usage:");
@@ -73,6 +73,8 @@ int main(int argc, char ** argv) {
     else if (strcmp(argv[1], "correct") ==0) correct_main(args);
     
     else if (strcmp(argv[1], "merge") ==0) merge_main(args);
+
+    else if (strcmp(argv[1], "header") == 0) reheader_main(args);
 
     else if (strcmp(argv[1], "--help") == 0){
         printModes();

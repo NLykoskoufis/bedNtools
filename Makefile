@@ -245,10 +245,15 @@ uninstall:
 $(BFILE): $(OFILE)
 	$(CXX) $^ $(LIB_FILES) -o $@ $(LIB_FLAGS) $(LDFLAG)
 
+
+
 obj/BedCorrect.o: src/BedCorrect.cpp $(HFILE) $(TFILE) $(CFILE)
 	$(CXX) -o $@ -c $< $(CXXFLAG) $(IFLAG)
 
 obj/data.o: src/common/data.cpp src/common/data.h src/common/filter.h $(TFILE)
+	$(CXX) -o $@ -c $< $(CXXFLAG) $(IFLAG)
+
+obj/reheader_%o: reheader_%.cpp reheader_data.h $(TFILE)
 	$(CXX) -o $@ -c $< $(CXXFLAG) $(IFLAG)
 
 obj/correct_%.o: correct_%.cpp correct_data.h $(TFILE)

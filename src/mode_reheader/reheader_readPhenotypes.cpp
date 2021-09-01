@@ -32,10 +32,16 @@ void include_data::readPhenotypes(string fbed, string fout){
     
 
     fdo << "#chr\tstart\tend\tid\tinfo\tstrand";
-    for(int i=0; i<tokens.size(); i++){
-        if (singleColumn){
-            for(int i=0; i< newHeader.size(); i++){
-                fdo << "\t" << newHeader[i];
+    for(int i=0; i< tokens.size()-6; i++){
+        if(singleColumn){
+            fdo << "\t" << newHeader[i];
+        }else{
+            std::unordered_map<std::string,std::string>::const_iterator got = newHeaderMap.find(tokens[i]);
+            if(got == newHeaderMap.end()){
+                std::cout << "Sample not found in header file!!";
+                exit(-1);
+            }else{
+                fdo << "\t" << got->second; 
             }
         }
     }
@@ -56,12 +62,7 @@ void include_data::readPhenotypes(string fbed, string fout){
             fdo << tokens[0] << "\t" << tokens[1] << "\t" << tokens[2] << "\t" << tokens[3] << "\t" << tokens[4] << "\t" << tokens[5];
 
             for(int i =6; i<tokens.size(); i++){
-                if(find(indexS.begin(), indexS.end(), i) != indexS.end())
-                {
-                    fdo << "\t" << tokens[i];
-                }else{
-                    continue;
-                } 
+                fdo << "\t" << tokens[i];
             }
             fdo << "\n";
         }
