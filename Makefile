@@ -173,6 +173,7 @@ yggdrasil: RMATH_LIB=/home/users/l/lykoskou/Tools/R-3.6.1/src/nmath/standalone/
 yggdrasil: HTSLD_INC=/home/users/l/lykoskou/Tools/htslib-1.9/
 yggdrasil: HTSLD_LIB=/home/users/l/lykoskou/Tools/htslib-1.9/
 yggdrasil: static
+
 baobab: BOOST_INC=/srv/beegfs/scratch/groups/funpopgen/Tools/boost_1_71_0/
 baobab: BOOST_LIB=/srv/beegfs/scratch/groups/funpopgen/Tools/boost_1_71_0/stage/lib/
 baobab: RMATH_INC=/srv/beegfs/scratch/groups/funpopgen/Tools/R-3.6.1/src/include/
@@ -244,8 +245,6 @@ uninstall:
 #COMPILATION RULES
 $(BFILE): $(OFILE)
 	$(CXX) $^ $(LIB_FILES) -o $@ $(LIB_FLAGS) $(LDFLAG)
-
-
 
 obj/BedCorrect.o: src/BedCorrect.cpp $(HFILE) $(TFILE) $(CFILE)
 	$(CXX) -o $@ -c $< $(CXXFLAG) $(IFLAG)
