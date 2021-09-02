@@ -48,7 +48,7 @@ CXXFLAG_DBG=-g
 CXXFLAG_WRN=-Wall -Wextra -Wno-sign-compare -Wno-unused-local-typedefs -Wno-deprecated -Wno-unused-parameter
 
 #BASE LIBRARIES
-LIB_FLAGS=-lz -lgsl -lbz2 -llzma -lgslcblas -lm -lpthread -lcurl
+LIB_FLAGS=-lz -lgsl -lbz2 -llzma -lgslcblas -lm -lpthread 
 
 #FILE LISTS
 BFILE=bin/bedntools
@@ -270,8 +270,8 @@ obj/vcf2bed_%.o: vcf2bed_%.cpp vcf2bed_data.h $(TFILE)
 obj/merge_%.o: merge_%.cpp merge_data.h $(TFILE)
 	$(CXX) -o $@ -c $< ${CXXFLAG} $(IFLAG)
 
-obj/reheader_%o: reheader_%.cpp reheader_data.h $(TFILE)
-	$(CXX) -o $@ -c $< $(CXXFLAG) $(IFLAG)
+#obj/reheader_%o: reheader_%.cpp reheader_data.h $(TFILE)
+#	$(CXX) -o $@ -c $< $(CXXFLAG) $(IFLAG)
 
 clean: 
 	rm -f obj/*.o $(BFILE)
