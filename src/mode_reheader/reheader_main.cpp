@@ -16,7 +16,7 @@ void reheader_main(std::vector < std::string > & argv) {
 
     boost::program_options::options_description opt_parallel ("\x1B[32mParallelization\33[0m");
 	opt_parallel.add_options()
-		("header", boost::program_options::value< std::string >(), "File containing new sample names to reheader bedfile. Either one column with new names of samples NEED TO BE IN CORRECT ORDER!!!. Or a two columns file: oldID newID.")
+		("header", boost::program_options::value< std::string >(), "File containing new sample names to reheader bedfile. Either one column with new names of samples NEED TO BE IN CORRECT ORDER!!!. Or a two columns file: oldID newID.");
 
         
     P.option_descriptions.add(opt_basic).add(opt_files).add(opt_parallel);
@@ -53,7 +53,7 @@ void reheader_main(std::vector < std::string > & argv) {
     //-------------
 
     if(P.options.count("header")){
-        P.readNewHeader(P.options["header"].as<std::string>())
+        P.readNewHeader(P.options["header"].as<std::string>());
         P.readPhenotypes(P.options["bed"].as<std::string>(),outFile);
     }else{
         std::cout << "You need to specify a new header file using --header." << std::endl;
