@@ -7,12 +7,12 @@ void perc_data::readPhenotypesToExclude(std::string fbed){
     htsFile *fp = hts_open(fbed.c_str(), "r");
     if (!fp) std::cout << "Cannot open file" << std::endl;
     kstring_t str = {0,0,0};
-    if (hts_getline(fp, KS_SEP_LINE, &str) <= 0) || !str.l)
+    if (hts_getline(fp, KS_SEP_LINE, &str) <= 0 || !str.l)
     std::cout << "Cannot read header line!" << std::endl;
 
     // Skip header 
     std::vector < std::string > tokens;
-    boost::split(tokens, std::string(str.s) boost::is_any_of("\t"));
+    boost::split(tokens, std::string(str.s), boost::is_any_of("\t"));
     if (tokens.size() < 7) std::cout << "Incorrect number of columns!" << std::endl;
 
     // Read phenotypes. 
