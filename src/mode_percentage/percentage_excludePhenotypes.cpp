@@ -40,7 +40,7 @@ void perc_data::excludePhenotypes(std::string fbed, std::string fout){
             it = phenExclusion.find(tokens[3]);
             if (it == phenExclusion.end()){
                 fdo << tokens[0] << "\t" << tokens[1] << "\t" << tokens[2] << "\t" << tokens[3] << "\t" << tokens[4] << "\t" << tokens[5];
-                for (unsigned int = 6; i < tokens.size(); i++){
+                for (unsigned int i= 6; i < tokens.size(); i++){
                     fdo << "\t" << tokens[i];
                 }
                 fdo << "\n";
