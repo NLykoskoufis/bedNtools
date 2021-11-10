@@ -36,7 +36,7 @@ void perc_data::excludePhenotypes(std::string fbed, std::string fout){
             if (tokens.size() < 7) std::cout << "Incorrect number of columns" << std::endl;
             
             // Check whether phenotype is in exclusion map or not
-            it = phenExclusion.find(line[3]);
+            it = phenExclusion.find(tokens[3]);
             if (it == phenExclusion.end()){
                 fdo << tokens[0] << "\t" << tokens[1] << "\t" << tokens[2] << "\t" << tokens[3] << "\t" << tokens[4] << "\t" << tokens[5];
                 for (unsigned int = 6; i < tokens.size(); i++){
