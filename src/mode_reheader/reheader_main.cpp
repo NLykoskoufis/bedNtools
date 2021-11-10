@@ -59,5 +59,4 @@ void reheader_main(std::vector < std::string > & argv) {
         std::cout << "You need to specify a new header file using --header." << std::endl;
         exit(-1);
     }
-
 }

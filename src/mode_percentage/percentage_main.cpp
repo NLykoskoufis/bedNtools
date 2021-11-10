@@ -18,8 +18,8 @@ void percentage_main(std::vector < std::string > & argv)
     boost::program_options::options_description opt_parallel ("\x1B[32mParallelization\33[0m");
 	opt_parallel.add_options()
 		("missingness", boost::program_options::value< double >(), "expression missingness threshold. Remove if more/equal than threshold.")
-        ("percentage", "Write percentage of missing and present expression across samples.");
-
+        ("percentage", "Write percentage of missing and present expression across samples.")
+        ("exclude-phenotypes", boost::program_options::value< std::string>() "Exclude phenotypes from bed file. Phenotypes should be in bed format.");
     P.option_descriptions.add(opt_basic).add(opt_files).add(opt_parallel);
 
     //-------------------
@@ -47,8 +47,8 @@ void percentage_main(std::vector < std::string > & argv)
 	//-----------------
     if (!P.options.count("bed")) std::cout <<"Phenotype data needs to be specified with --bed [file.bed]" << std::endl;
     if (!P.options.count("out")) std::cout << "Output needs to be specified with --out [file.out]" << std::endl; 
-    int nMode = P.options.count("missingness") + P.options.count("percentage");
-    if (nMode != 1) std::cout << "Please, specify only one of these options [--permute, --nominal, --mapping]" << std::endl;
+    int nMode = P.options.count("missingness") + P.options.count("percentage") + P.options.count("exlude-phenotypes");
+    if (nMode != 1) std::cout << "Please, specify only one of these options [--missingness, --percentage, --exlude-phenotypes]" << std::endl;
     std::string outFile = P.options["out"].as<std::string>();
     //---------
 	// 5. MODES
@@ -59,19 +59,27 @@ void percentage_main(std::vector < std::string > & argv)
         P.mode = PERC_FILTER;
         P.perc_threshold = P.options["missingness"].as<double>();
         std::cout << " * Removing phenotypes with ≥ " << std::to_string(P.perc_threshold) << " missingness" << std::endl;
+        P.writeData(P.options["bed"].as<std::string>(),outFile);
     }
 
     //MODE 2: Percentage
     if (P.options.count("percentage")){
         P.mode = PERC_WRITE;
         std::cout << " * Writing percentage of present and missing expression accross samples" << std::endl;
+        P.writeData(P.options["bed"].as<std::string>(),outFile);
     }
 
+    if (P.options.count("exclude-phenotypes")){
+        P.mode = PERC_NONE;
+        std::count << "  * Excluding phenotypes in provided bed file" << std::endl;
+        P.readPhenotypesToExclude(P.options["exclude-phenotypes"].as<std::string>());
+        P.excludePhenotypes(P.options["bed"].as<std::string>(),outFile);
+    }
     //-------------
 	// RUN ANALYSIS
 	//-------------
 
-    P.writeData(P.options["bed"].as<std::string>(),outFile);
+    
 
 }
 

@@ -28,9 +28,15 @@ public:
     std::vector < std::vector < float > > phenotype_val;
     std::vector < std::string > phenotype_info;
     
+
+    // EXCLUSION 
+    std::map <std::string,int> phenExclusion;
+
     // PROCESS 
     void writeData(std::string,std::string);
-
+    void perc_data::readPhenotypesToExclude(std::string);
+    void excludePhenotypes(std::string,std::string);
+    
     // COMPUTATION METHODS [ALL INLINE FOR SPEED] 
     double getPercentage_missing(std::vector<float> &);
     

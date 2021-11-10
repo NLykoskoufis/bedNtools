@@ -1,8 +1,6 @@
 #include "percentage_data.h"
 
 
-
-
 void perc_data::writeData(string fbed, string fout){
     
     output_file fdo (fout);
