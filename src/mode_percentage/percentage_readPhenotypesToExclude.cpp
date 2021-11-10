@@ -13,7 +13,7 @@ void perc_data::readPhenotypesToExclude(std::string fbed){
     // Skip header 
     std::vector < std::string > tokens;
     boost::split(tokens, std::string(str.s) boost::is_any_of("\t"));
-    if (tokens.size() < 7) std::cout "Incorrect number of columns!" << std::endl;
+    if (tokens.size() < 7) std::cout << "Incorrect number of columns!" << std::endl;
 
     // Read phenotypes. 
     // Only need to read the IDs into map. 
