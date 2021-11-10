@@ -71,7 +71,7 @@ void percentage_main(std::vector < std::string > & argv)
 
     if (P.options.count("exclude-phenotypes")){
         P.mode = PERC_NONE;
-        std::count << "  * Excluding phenotypes in provided bed file" << std::endl;
+        std::cout << "  * Excluding phenotypes in provided bed file" << std::endl;
         P.readPhenotypesToExclude(P.options["exclude-phenotypes"].as<std::string>());
         P.excludePhenotypes(P.options["bed"].as<std::string>(),outFile);
     }
