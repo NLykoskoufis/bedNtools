@@ -19,7 +19,7 @@ void percentage_main(std::vector < std::string > & argv)
 	opt_parallel.add_options()
 		("missingness", boost::program_options::value< double >(), "expression missingness threshold. Remove if more/equal than threshold.")
         ("percentage", "Write percentage of missing and present expression across samples.")
-        ("exclude-phenotypes", boost::program_options::value< std::string>() "Exclude phenotypes from bed file. Phenotypes should be in bed format.");
+        ("exclude-phenotypes", boost::program_options::value< std::string>(), "Exclude phenotypes from bed file. Phenotypes should be in bed format.");
     P.option_descriptions.add(opt_basic).add(opt_files).add(opt_parallel);
 
     //-------------------
