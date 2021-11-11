@@ -47,7 +47,7 @@ void percentage_main(std::vector < std::string > & argv)
 	//-----------------
     if (!P.options.count("bed")) std::cout <<"Phenotype data needs to be specified with --bed [file.bed]" << std::endl;
     if (!P.options.count("out")) std::cout << "Output needs to be specified with --out [file.out]" << std::endl; 
-    int nMode = P.options.count("missingness") + P.options.count("percentage") + P.options.count("exludePhen");
+    int nMode = P.options.count("missingness") + P.options.count("percentage");
     if (nMode != 1) std::cout << "Please, specify only one of these options [--missingness, --percentage, --exludePhen]" << std::endl;
     std::string outFile = P.options["out"].as<std::string>();
     //---------
