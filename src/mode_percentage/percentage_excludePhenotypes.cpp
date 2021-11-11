@@ -21,7 +21,7 @@ void perc_data::excludePhenotypes(std::string fbed, std::string fout){
 
     // Write header
     fdo << "#chr\tstart\tend\tid\tinfo\tstrand";
-    for (unsigned int i=0; i < tokens.size()-6; i++){
+    for (unsigned int i=6; i < tokens.size(); i++){
         fdo << "\t" << tokens[i];
     }
     fdo << "\n";
