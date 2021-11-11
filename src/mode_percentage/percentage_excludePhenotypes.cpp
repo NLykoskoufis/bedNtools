@@ -24,6 +24,7 @@ void perc_data::excludePhenotypes(std::string fbed, std::string fout){
     for (unsigned int i=0; i < tokens.size()-6; i++){
         fdo << "\t" << tokens[i];
     }
+    fdo << "\n";
 
     unsigned int linecount = 0;
 
