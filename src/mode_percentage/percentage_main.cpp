@@ -19,7 +19,7 @@ void percentage_main(std::vector < std::string > & argv)
 	opt_parallel.add_options()
 		("missingness", boost::program_options::value< double >(), "expression missingness threshold. Remove if more/equal than threshold.")
         ("percentage", "Write percentage of missing and present expression across samples.")
-        ("exclude-phenotypes", boost::program_options::value< std::string>(), "Exclude phenotypes from bed file. Phenotypes should be in bed format.");
+        ("excludePhen", boost::program_options::value< std::string>(), "Exclude phenotypes from bed file. Phenotypes should be in bed format.");
     P.option_descriptions.add(opt_basic).add(opt_files).add(opt_parallel);
 
     //-------------------
@@ -47,8 +47,8 @@ void percentage_main(std::vector < std::string > & argv)
 	//-----------------
     if (!P.options.count("bed")) std::cout <<"Phenotype data needs to be specified with --bed [file.bed]" << std::endl;
     if (!P.options.count("out")) std::cout << "Output needs to be specified with --out [file.out]" << std::endl; 
-    int nMode = P.options.count("missingness") + P.options.count("percentage") + P.options.count("exlude-phenotypes");
-    if (nMode != 1) std::cout << "Please, specify only one of these options [--missingness, --percentage, --exlude-phenotypes]" << std::endl;
+    int nMode = P.options.count("missingness") + P.options.count("percentage") + P.options.count("exludePhen");
+    if (nMode != 1) std::cout << "Please, specify only one of these options [--missingness, --percentage, --exludePhen]" << std::endl;
     std::string outFile = P.options["out"].as<std::string>();
     //---------
 	// 5. MODES
@@ -69,10 +69,10 @@ void percentage_main(std::vector < std::string > & argv)
         P.writeData(P.options["bed"].as<std::string>(),outFile);
     }
 
-    if (P.options.count("exclude-phenotypes")){
+    if (P.options.count("excludePhen")){
         P.mode = PERC_NONE;
         std::cout << "  * Excluding phenotypes in provided bed file" << std::endl;
-        P.readPhenotypesToExclude(P.options["exclude-phenotypes"].as<std::string>());
+        P.readPhenotypesToExclude(P.options["excludePhen"].as<std::string>());
         P.excludePhenotypes(P.options["bed"].as<std::string>(),outFile);
     }
     //-------------
