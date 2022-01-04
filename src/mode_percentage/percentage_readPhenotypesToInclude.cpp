@@ -3,7 +3,7 @@
 void perc_data::readPhenotypesToInclude(std::string fbed){
     
     //Open BED file 
-    std::cout << "  * Reading phenotypes to exclude in [" << fbed << "]" << std::endl;
+    std::cout << "  * Reading phenotypes to include in [" << fbed << "]" << std::endl;
     htsFile *fp = hts_open(fbed.c_str(), "r");
     if (!fp) std::cout << "Cannot open file" << std::endl;
     kstring_t str = {0,0,0};
@@ -36,6 +36,6 @@ void perc_data::readPhenotypesToInclude(std::string fbed){
     if (hts_close(fp)) std::cout << "Cannot properly close file" << std::endl;
     if (phenotype_count == 0) std::cout << "Did not find any phenotypes" << std::endl;
 
-    std::cout << "  * Read " << phenotype_count << " phenotypes to be excluded from main bed file" << std::endl;
+    std::cout << "  * Read " << phenotype_count << " phenotypes to be included from main bed file" << std::endl;
 
 }

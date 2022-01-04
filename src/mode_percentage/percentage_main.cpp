@@ -72,7 +72,7 @@ void percentage_main(std::vector < std::string > & argv)
     if (P.options.count("includePhen")){
         P.mode = PERC_NONE;
         std::cout << "  * Including phenotypes in provided bed file" << std::endl;
-        P.readPhenotypesToInclude(P.options["excludePhen"].as<std::string>());
+        P.readPhenotypesToInclude(P.options["includePhen"].as<std::string>());
         P.excludePhenotypes(P.options["bed"].as<std::string>(),outFile);
     }
     //-------------
