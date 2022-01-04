@@ -34,7 +34,7 @@ public:
 
     // PROCESS 
     void writeData(std::string,std::string);
-    void readPhenotypesToExclude(std::string);
+    void readPhenotypesToInclude(std::string);
     void excludePhenotypes(std::string,std::string);
     
     // COMPUTATION METHODS [ALL INLINE FOR SPEED] 

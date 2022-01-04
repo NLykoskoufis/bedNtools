@@ -1,6 +1,6 @@
 #include "percentage_data.h"
 
-void perc_data::readPhenotypesToExclude(std::string fbed){
+void perc_data::readPhenotypesToInclude(std::string fbed){
     
     //Open BED file 
     std::cout << "  * Reading phenotypes to exclude in [" << fbed << "]" << std::endl;

@@ -19,7 +19,7 @@ void percentage_main(std::vector < std::string > & argv)
 	opt_parallel.add_options()
 		("missingness", boost::program_options::value< double >(), "expression missingness threshold. Remove if more/equal than threshold.")
         ("percentage", "Write percentage of missing and present expression across samples.")
-        ("excludePhen", boost::program_options::value< std::string>(), "Exclude phenotypes from bed file. Phenotypes should be in bed format.");
+        ("includePhen", boost::program_options::value< std::string>(), "Include phenotypes from bed file. Phenotypes should be in bed format.");
     P.option_descriptions.add(opt_basic).add(opt_files).add(opt_parallel);
 
     //-------------------
@@ -36,7 +36,7 @@ void percentage_main(std::vector < std::string > & argv)
     //---------------------
 	// 3. PRINT HELP/HEADER
 	//---------------------
-    std::cout << "\n" << "\x1B[32;1m" << "BED PHENOTYPE PERCENTAGE" << "\033[0m" << endl;
+    std::cout << "\n" << "\x1B[32;1m" << "BED PHENOTYPE INCLUSION" << "\033[0m" << endl;
     if(P.options.count("help")) {
         std::cout << P.option_descriptions << std::endl;
         exit(0);
@@ -72,7 +72,7 @@ void percentage_main(std::vector < std::string > & argv)
     if (P.options.count("excludePhen")){
         P.mode = PERC_NONE;
         std::cout << "  * Excluding phenotypes in provided bed file" << std::endl;
-        P.readPhenotypesToExclude(P.options["excludePhen"].as<std::string>());
+        P.readPhenotypesToInclude(P.options["excludePhen"].as<std::string>());
         P.excludePhenotypes(P.options["bed"].as<std::string>(),outFile);
     }
     //-------------
