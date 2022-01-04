@@ -30,7 +30,7 @@ void perc_data::excludePhenotypes(std::string fbed, std::string fout){
 
     while (hts_getline(fp, KS_SEP_LINE, &str) >= 0){
         linecount ++;
-        if (linecount % 1000 == 0) std::cout << "  * Read " << std::to_string(linecount) << " lines" << std::endl;
+        if (linecount % 10000 == 0) std::cout << "  * Read " << std::to_string(linecount) << " lines" << std::endl;
         boost::split(tokens, std::string(str.s), boost::is_any_of("\t"));
         
         if (str.l && str.s[0] != tbx ->conf.meta_char) {
