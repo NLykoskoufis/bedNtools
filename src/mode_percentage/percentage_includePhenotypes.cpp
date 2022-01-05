@@ -49,6 +49,7 @@ void perc_data::excludePhenotypes(std::string fbed, std::string fout){
                         }
                         fdo << "\n";
                     }
+                    break;
                 case EXCLUDE_PHEN : 
                     if (it == phenExclusion.end()){
                         fdo << tokens[0] << "\t" << tokens[1] << "\t" << tokens[2] << "\t" << tokens[3] << "\t" << tokens[4] << "\t" << tokens[5];
@@ -57,8 +58,7 @@ void perc_data::excludePhenotypes(std::string fbed, std::string fout){
                         }
                         fdo << "\n";
                     }
-
-
+                    break;
             }
         }
     }
