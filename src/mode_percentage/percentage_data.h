@@ -7,7 +7,8 @@
 #define PERC_NONE   0
 #define PERC_WRITE  1
 #define PERC_FILTER 2
-
+#define INCLUDE_PHEN 3
+#define EXCLUDE_PHEN 4
 
 class perc_data {
 public:
