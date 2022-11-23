@@ -1,12 +1,12 @@
 ##########################################
 # SET THESE 6 PATHS CORRECTLY TO COMPILE #
 ##########################################
-BOOST_INC=
-BOOST_LIB=
-RMATH_INC=
-RMATH_LIB=
-HTSLD_INC=
-HTSLD_LIB=
+RMATH_INC=/usr/local/R-4.1.1/src/include
+RMATH_LIB=/usr/local/R-4.1.1/src/nmath/standalone
+BOOST_INC=/usr/local/include/boost
+BOOST_LIB=/usr/local/lib/
+HTSLD_INC=/usr/local/include/htslib
+HTSLD_LIB=/usr/local/lib
 #########################################################
 # EXAMPLES:                                             #
 # BOOST_INC=/usr/include/                               #
