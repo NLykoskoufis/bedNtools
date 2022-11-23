@@ -48,7 +48,7 @@ CXXFLAG_DBG=-g
 CXXFLAG_WRN=-Wall -Wextra -Wno-sign-compare -Wno-unused-local-typedefs -Wno-deprecated -Wno-unused-parameter
 
 #BASE LIBRARIES
-LIB_FLAGS=-lz -lgsl -lbz2 -llzma -lgslcblas -lm -lpthread 
+LIB_FLAGS=-lz -lgsl -lbz2 -llzma -lgslcblas -lm -lpthread -lcurl
 
 #FILE LISTS
 BFILE=bin/bedntools
