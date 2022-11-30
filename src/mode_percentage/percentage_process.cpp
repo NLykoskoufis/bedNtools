@@ -18,7 +18,7 @@ void perc_data::writeData(string fbed, string fout){
     std::vector < std::string > tokens;
     boost::split(tokens, std::string(str.s), boost::is_any_of("\t"));
     if (tokens.size() < 7) std::cout << "Incorrect number of columns" << std::endl;
-    int sample_count = 0;
+    int sample_count = tokens.size();
     
     // If mode write percentage (--percentage)
     if (mode == PERC_WRITE){
@@ -26,8 +26,14 @@ void perc_data::writeData(string fbed, string fout){
     }
     // If mode filter phenotypes (--missingness)
     if (mode == PERC_FILTER){
-        for (int t = 0 ; t < tokens.size() ; t ++) {
-            fdo << tokens[t] << "\t";
+        fdo << tokens[0];
+        fdo << "\t" << tokens[1];
+        fdo << "\t" << tokens[2];
+        fdo << "\t" << tokens[3];
+        fdo << "\t" << tokens[4];
+        fdo << "\t" << tokens[5];
+        for (int t = 6 ; t < tokens.size() ; t ++) {
+            fdo << "\t" << tokens[t];
 	    }
         fdo << std::endl;
     }
@@ -57,9 +63,9 @@ void perc_data::writeData(string fbed, string fout){
                 fdo << tokens[2] << "\t";
                 fdo << tokens[3] << "\t";
                 fdo << tokens[4] << "\t";
-                fdo << tokens[5] << "\t";
+                fdo << tokens[5];
                 for(auto x:val){
-                    fdo << std::to_string(x) << "\t";
+                    fdo << "\t" << std::to_string(x);
                 }
                 fdo << std::endl;
                 }
